@@ -4,30 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa Acadêmica - APIs e Integrações</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
 </head>
 <body class="bg-blue-50 text-gray-800">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">APIs e Integrações</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+
+    <nav class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#" class="text-xl font-bold">APIs e Integrações</a>
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#introducao">Introdução</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tipos">Tipos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ferramentas">Ferramentas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#referencias">Referências</a></li>
-                </ul>
+            <div id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent text-center md:text-left">
+                <a href="#introducao" class="block py-2 px-4 hover:text-gray-300">Introdução</a>
+                <a href="#tipos" class="block py-2 px-4 hover:text-gray-300">Tipos</a>
+                <a href="#ferramentas" class="block py-2 px-4 hover:text-gray-300">Ferramentas</a>
+                <a href="#referencias" class="block py-2 px-4 hover:text-gray-300">Referências</a>
             </div>
         </div>
     </nav>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
     
-    <section class="max-w-4xl mx-auto p-6">
+    <section id="introducao" class="max-w-4xl mx-auto p-6">
         <h2 class="text-2xl font-semibold text-black">Introdução</h2>
         <p class="mt-2">As APIs são um conjunto de padrões que fazem parte de uma interface. As APIs permitem a criação de plataformas de maneira mais simples e prática para desenvolvedores. A partir de APIs, é possível criar softwares, aplicativos, programas e plataformas diversas. Por exemplo, apps desenvolvidos para celulares Android e iPhone (iOS) são criados a partir de padrões definidos e disponibilizados pelas APIs de cada sistema operacional.
 
@@ -78,7 +85,7 @@
             Quando estes certificados não são validados corretamente, essas vulnerabilidades no sistema podem ser exploradas, permitindo que hackers sejam capazes de interceptar dados de usuários, o que é potencialmente perigoso quando tratamos de informações financeiras, como o sistema de Open Banking e de dados médicos.</p>
     </section>
     
-    <section class="max-w-4xl mx-auto p-6">
+    <section id="tipos" class="max-w-4xl mx-auto p-6">
         <h2 class="text-3xl font-semibold text-black">Tipos de APIs</h2>
         <p class="mt-3">As APIs podem ser divididas em cinco tipos principais: web, RESTful, SOAP, hardware e plataforma.</p>
         <ul class="list-disc list-inside mt-2">
@@ -129,7 +136,7 @@
         <p class="mt-2">Todas aquelas acessíveis via internet, permitindo interação com sistemas e dispositivos à distância. As APIs utilizadas por serviços de streaming, como a Netflix, Prime e Spotify são exemplos que enquadram nessa categoria.</p>
     </section>
     
-    <section class="max-w-4xl mx-auto p-6">
+    <section id="ferramentas" class="max-w-4xl mx-auto p-6">
         <h2 class="text-2xl font-semibold text-black">Ferramentas Populares</h2>
         <div id="carouselExample" class="carousel slide max-w-lg mx-auto" data-bs-ride="carousel">
             <div class="carousel-inner">
