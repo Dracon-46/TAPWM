@@ -1,19 +1,188 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
-        <title>Forum</title>
-    </head>
-    <body>
-        <h1>Inteligencia artificial</h1>
-        <ul>
-            <li>Introdução</li>
-            <li>Itens e subitens do tema</li>
-            <li>Conclusão</li>
-            <li>referencias</li>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Acadêmica - APIs e Integrações</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body class="bg-blue-50 text-gray-800">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">APIs e Integrações</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="#introducao">Introdução</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tipos">Tipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ferramentas">Ferramentas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#referencias">Referências</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">Introdução</h2>
+        <p class="mt-2">As APIs são um conjunto de padrões que fazem parte de uma interface. As APIs permitem a criação de plataformas de maneira mais simples e prática para desenvolvedores. A partir de APIs, é possível criar softwares, aplicativos, programas e plataformas diversas. Por exemplo, apps desenvolvidos para celulares Android e iPhone (iOS) são criados a partir de padrões definidos e disponibilizados pelas APIs de cada sistema operacional.
+
+            Em 2020, o Google a Apple anunciaram que trabalhariam juntos para desenvolver uma API que rastreasse o contágio da Covid-19 a partir dos celulares. Mas, afinal, o que é uma API? Confira, na lista abaixo, cinco perguntas e respostas sobre APIs e solucione dúvidas sobre a interface.</p>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">1. O que é API e como funciona?
+        </h2>
+        <p class="mt-2">A sigla API deriva da expressão inglesa Application Programming Interface que, traduzida para o português, pode ser compreendida como uma interface de programação de aplicação. Ou seja, API é um conjunto de normas que possibilita a comunicação entre plataformas por meio de uma série de padrões e protocolos.
+
+            Por meio de APIs, desenvolvedores podem criar novos softwares e aplicativos capazes de se comunicar com outras plataformas. Por exemplo: caso um desenvolvedor queira criar um aplicativo de fotos para Android, ele poderá ter acesso à câmera do celular através da API do sistema operacional, sem ter a necessidade de criar uma nova interface de câmera do zero.
+            
+            O mesmo acontece com aplicativos que utilizam os serviços de mapas por meio da API do Google Maps ou, ainda, nas integrações entre apps, como o Spotify e o Instagram, que possibilita compartilhar faixas nos Stories.
+        </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">2. Qual a função de uma API?
+        </h2>
+        <p class="mt-2">A função de uma API é, basicamente, facilitar e simplificar o trabalho de desenvolvedores, além de oferecer um padrão para a criação de novas plataformas. Com o uso das APIs, não é necessário criar códigos personalizados para cada função que um programa for executar, o que simplifica a criação de novos aplicativos, softwares e plataformas em geral.
+
+            Além disso, as APIs também possuem papel fundamental quando o assunto é segurança, já que também são capazes de bloquear acesso e permissões a dados de software e hardware que algumas aplicações não podem usar.
+        </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">3. Exemplos de API
+        </h2>
+        <p class="mt-2">As APIs estão presentes na maioria dos aplicativos que utilizamos no nosso dia a dia. No WhatsApp, por exemplo, podemos perceber a integração da lista de contatos salva no dispositivo com os contatos do aplicativo. No Facebook, temos a integração com o Instagram, que permite que fotos postadas no aplicativo também sejam postadas automaticamente no Facebook.
+
+            Também podemos observar o uso das APIs quando realizamos compras online, já que a plataforma utilizada para pagamentos — em que colocamos as informações de cartões de crédito — deve ser integrada à operadora do cartão, que pode ou não autorizar a compra. Esses são alguns exemplos de APIs mais comuns, que podemos perceber no nosso cotidiano, e que facilitam a comunicação entre plataformas.
+        </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">4. O que é API no mercado financeiro?
+        </h2>
+        <p class="mt-2">As APIs também podem ser utilizadas para a comunicação entre serviços e, no mercado financeiro, elas funcionam por meio do sistema de Open Banking. A solução de Open Banking é simples e promete mudar o sistema financeiro, já que as informações de consumidores estariam disponíveis em uma base de dados padronizada capaz de se comunicar com outras instituições, o que seria possível através de APIs. Com o Open Banking, seria mais fácil realizar a portabilidade de dados de um cliente que deseja migrar para outro banco, por exemplo.
+        </p>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">5. Polêmicas da tecnologia
+        </h2>
+        <p class="mt-2">A criptografia é necessária para manter os dados das APIs seguros. Por este motivo, alguns certificados precisam ser validados corretamente, sem que haja margem para criação de possíveis brechas no sistema.
+
+            Quando estes certificados não são validados corretamente, essas vulnerabilidades no sistema podem ser exploradas, permitindo que hackers sejam capazes de interceptar dados de usuários, o que é potencialmente perigoso quando tratamos de informações financeiras, como o sistema de Open Banking e de dados médicos.</p>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-3xl font-semibold text-black">Tipos de APIs</h2>
+        <p class="mt-3">As APIs podem ser divididas em cinco tipos principais: web, RESTful, SOAP, hardware e plataforma.</p>
+        <ul class="list-disc list-inside mt-2">
+            <h3 class="text-2xl font-semibold text-black">API Web</h3>
+            <p class="mt-2">
+                As APIs Web são aquelas que permitem a comunicação entre sistemas via internet, facilitando a integração de dados e utilização de suas diferentes funcionalidades. Um exemplo de API web bastante conhecida e utilizada é a API do Google Maps.
+            </p>
+            <h3 class="text-2xl font-semibold text-black">API RESTful</h3>
+            <p class="mt-2">
+                As APIs RESTful têm um estilo de construção que utiliza o protocolo HTTP. Por meio desse protocolo é que ocorre a comunicação. Isso faz com que essas APIs sejam mais leves e escaláveis. As APIs da Docusign são RESTful, por exemplo.
+            </p>
+            <h3 class="text-2xl font-semibold text-black">API SOAP</h3>
+            <p class="mt-2">
+                As APIs SOAP são baseadas no protocolo XML para troca de mensagens entre sistemas, sendo a opção perfeita para ambientes mais complexos, como o caso dos ambientes corporativos.
+            </p>
+            <h3 class="text-2xl font-semibold text-black">API Hardware</h3>
+            <p class="mt-2">
+                As APIs de hardware, como o próprio nome sugere, fornecem interfaces para interação com componentes físicos, como sensores e dispositivos embarcados.
+            </p>
+            <h3 class="text-2xl font-semibold text-black">API de plataforma</h3>
+            <p class="mt-2">
+                As APIs de plataforma são aquelas que possibilitam integrações e desenvolvimento de aplicativos em plataformas específicas, como Facebook ou Google. Nesse sentido, um exemplo conhecido é o API do Facebook Graph.
+            </p>
         </ul>
-    </body>
+    </section>
+
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">Quais as APIs segundo as políticas de uso?</h2>
+        <p class="mt-2">Os tipos de APIs também podem ser classificados segundo as políticas de uso. Nesse contexto, elas se dividem em quatro tipos. Conheça!</p>
+        <h3 class="text-xl font-semibold text-black">APIs públicas</h3>
+        <p class="mt-2">As APIs públicas são aquelas acessíveis a qualquer pessoa, geralmente, com documentação completa e exemplos de uso. Um exemplo de aplicação que se enquadra nessa categoria é a API do Google Translate.</p>
+        <h3 class="text-xl font-semibold text-black">APIs privadas</h3>
+        <p class="mt-2">As APIs privadas são desenvolvidas para uso interno de uma empresa ou organização, com acesso totalmente restrito.</p>
+        <h3 class="text-xl font-semibold text-black">APIs de parceiros</h3>
+        <p class="mt-2">As APIs de parceiros recebem esse nome, pois são compartilhadas com parceiros específicos para fins de integração e colaboração.</p>
+        <h3 class="text-xl font-semibold text-black">APIs compostas</h3>
+        <p class="mt-2">Por fim, as APIs compostas são aquelas resultantes da combinação de APIs de diferentes fontes, criando novas funcionalidades e serviços.</p>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">Quais as APIs em relação ao uso?</h2>
+        <p class="mt-2">Existem três categorias de APIs na classificação de uso: as de dados, de sistemas operacionais e remotas.</p>
+        <h3 class="text-xl font-semibold text-black">APIs de dados</h3>
+        <p class="mt-2">Aquelas que fornecem acesso a bancos de dados e conjuntos de informações específicos, como o API do Instituto Brasileiro de Geografia e Estatística (IBGE).</p>
+        <h3 class="text-xl font-semibold text-black">APIs de sistemas operacionais</h3>
+        <p class="mt-2">Tipos de APIs que permitem interação com funcionalidades do sistema operacional, como gerenciamento de arquivos e processos. O API do Windows se enquadra nessa classificação.</p>
+        <h3 class="text-xl font-semibold text-black">APIs remotas</h3>
+        <p class="mt-2">Todas aquelas acessíveis via internet, permitindo interação com sistemas e dispositivos à distância. As APIs utilizadas por serviços de streaming, como a Netflix, Prime e Spotify são exemplos que enquadram nessa categoria.</p>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">Ferramentas Populares</h2>
+        <div id="carouselExample" class="carousel slide max-w-lg mx-auto" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active text-center">
+                    <img src="postman.png" class="d-block w-100 mx-auto" style="max-height: 400px; object-fit: contain;" alt="Postman">
+                    <div class="text-center mt-2 p-2 bg-white rounded shadow-md">
+                        <p class="text-gray-800">O Postman é uma ferramenta popular para testar APIs e automatizar requisições.</p>
+                    </div>
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="Swagger-logo.png" class="d-block w-100 mx-auto" style="max-height: 400px; object-fit: contain;" alt="Swagger">
+                    <div class="text-center mt-2 p-2 bg-white rounded shadow-md">
+                        <p class="text-gray-800">O Swagger facilita a documentação e visualização de APIs RESTful.</p>
+                    </div>
+                </div>
+                <div class="carousel-item text-center">
+                    <img src="graphql.png" class="d-block w-100 mx-auto" style="max-height: 400px; object-fit: contain;" alt="GraphQL">
+                    <div class="text-center mt-2 p-2 bg-white rounded shadow-md">
+                        <p class="text-gray-800">O GraphQL é uma linguagem de consulta para APIs que permite obter dados de forma mais eficiente.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+    
+    <section class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-semibold text-black">Conclusão</h2>
+        <p class="mt-2">Diante do conceito de API e exemplos apresentados, podemos perceber o quão útil pode ser para nossas aplicações usar integrações APIs.
+
+            De forma geral, as APIs trazem uma abundância de recursos para enriquecer ainda mais os nossos aplicativos e permitem que sistemas conversem entre si, compartilhando serviços e informações, utilizando um padrão bem fácil de assimilar.
+            
+            Agora que já sabe como funciona uma API, que tal começar a implementá-las na sua empresa?</p>
+    </section>
+
+    <section class="container bg-white p-6 shadow-lg rounded mt-4" id="referencias">
+        <h2 class="text-2xl font-semibold text-black">Referências</h2>
+        <ul class="list-disc list-inside mt-2">
+            <li>POSTMAN. <i>Documentação oficial</i>. Disponível em: <a href="https://learning.postman.com/docs/introduction/overview/" class="text-black">https://learning.postman.com</a>. Acesso em: 25 fev. 2025.</li>
+            <li>SWAGGER. <i>Tutoriais sobre Swagger</i>. Disponível em: <a href="https://swagger.io/docs/" class="text-black">https://swagger.io/docs/</a>. Acesso em: 25 fev. 2025.</li>
+            <li>GRAPHQL. <i>Tutoriais sobre GraphQL</i>. Disponível em: <a href="https://graphql.org/learn/" class="text-black">https://graphql.org/learn/</a>. Acesso em: 25 fev. 2025.</li>
+            <li>Tipos de API. <i>Tipos de API's</i>. Disponível em: <a href="https://www.docusign.com/pt-br/blog/quais-os-tipos-de-api" class="text-black">https://www.docusign.com/pt-br/blog/quais-os-tipos-de-api</a>. Acesso em: 25 fev. 2025.</li>
+            <li>API's. <i>Sobre API's</i>. Disponível em: <a href="https://www.blip.ai/blog/tecnologia/api-conceito-e-exemplos/" class="text-black">https://www.blip.ai/blog/tecnologia/api-conceito-e-exemplos/</a>. Acesso em: 25 fev. 2025.</li>
+            <li>O que é API?. <i>O que são API's</i>. Disponível em: <a href="https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml" class="text-black">https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml</a>. Acesso em: 25 fev. 2025.</li>
+        </ul>
+    </section>
+    
+</body>
 </html>
