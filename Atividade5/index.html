@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jokenpo</title>
-    <script src="script.js"></script>
+    <title>Jokenpô</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="jokenpo-container">
+        <h1>Jokenpô</h1>
+        <div class="botoes-jogo">
+            <button onclick="jogar('✊')">✊</button>
+            <button onclick="jogar('✋')">✋</button>
+            <button onclick="jogar('✌️')">✌️</button>
+        </div>
+        <div id="resultado">Escolha uma opção para começar!</div>
+        <div class="placar" id="placar">Placar: 0 - 0</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
