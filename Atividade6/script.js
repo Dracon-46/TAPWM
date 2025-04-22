@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const surveyForm = document.getElementById('surveyForm');
-    const resultsDiv = document.getElementById('results');
-    const resetBtn = document.getElementById('resetBtn');
-    const totalResponsesSpan = document.getElementById('totalResponses');
+    const formularioPesquisa = document.getElementById('surveyForm');
+    const divResultados = document.getElementById('results');
+    const botaoReiniciar = document.getElementById('resetBtn');
+    const spanTotalRespostas = document.getElementById('totalResponses');
     
     // Inicializar gráficos
-    const opinionCtx = document.getElementById('opinionChart').getContext('2d');
-    const genderCtx = document.getElementById('genderChart').getContext('2d');
+    const contextoOpiniao = document.getElementById('opinionChart').getContext('2d');
+    const contextoGenero = document.getElementById('genderChart').getContext('2d');
     
-    let opinionChart = new Chart(opinionCtx, {
+    let graficoOpiniao = new Chart(contextoOpiniao, {
         type: 'pie',
         data: {
             labels: ['Ótimo', 'Bom', 'Regular', 'Péssimo'],
@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 tooltip: {
                     callbacks: {
-                        label: function(context) {
-                            const label = context.label || '';
-                            const value = context.raw || 0;
-                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = Math.round((value / total) * 100);
-                            return `${label}: ${value} (${percentage}%)`;
+                        label: function(contexto) {
+                            const rotulo = contexto.label || '';
+                            const valor = contexto.raw || 0;
+                            const total = contexto.dataset.data.reduce((a, b) => a + b, 0);
+                            const porcentagem = Math.round((valor / total) * 100);
+                            return `${rotulo}: ${valor} (${porcentagem}%)`;
                         }
                     }
                 }
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    let genderChart = new Chart(genderCtx, {
+    let graficoGenero = new Chart(contextoGenero, {
         type: 'doughnut',
         data: {
             labels: ['Masculino', 'Feminino', 'Outros'],
@@ -68,47 +68,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    let responses = [];
+    let respostas = [];
     
     // Carregar respostas salvas no localStorage
-    if (localStorage.getItem('filmSurveyResponses')) {
-        responses = JSON.parse(localStorage.getItem('filmSurveyResponses'));
-        updateResults();
+    if (localStorage.getItem('respostasPesquisaFilme')) {
+        respostas = JSON.parse(localStorage.getItem('respostasPesquisaFilme'));
+        atualizarResultados();
     }
     
-    surveyForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    formularioPesquisa.addEventListener('submit', function(evento) {
+        evento.preventDefault();
         
-        const age = parseInt(document.getElementById('age').value);
-        const gender = document.querySelector('input[name="gender"]:checked').value;
-        const opinion = parseInt(document.querySelector('input[name="opinion"]:checked').value);
+        const idade = parseInt(document.getElementById('age').value);
+        const genero = document.querySelector('input[name="gender"]:checked').value;
+        const opiniao = parseInt(document.querySelector('input[name="opinion"]:checked').value);
         
         // Adicionar nova resposta ao array
-        responses.push({ age, gender, opinion });
+        respostas.push({ idade, genero, opiniao });
         
         // Salvar no localStorage
-        localStorage.setItem('filmSurveyResponses', JSON.stringify(responses));
+        localStorage.setItem('respostasPesquisaFilme', JSON.stringify(respostas));
         
         // Atualizar resultados
-        updateResults();
+        atualizarResultados();
         
         // Limpar formulário
-        surveyForm.reset();
+        formularioPesquisa.reset();
     });
     
-    resetBtn.addEventListener('click', function() {
+    botaoReiniciar.addEventListener('click', function() {
         if (confirm('Tem certeza que deseja reiniciar a pesquisa? Todos os dados serão perdidos.')) {
-            responses = [];
-            localStorage.removeItem('filmSurveyResponses');
-            updateResults();
+            respostas = [];
+            localStorage.removeItem('respostasPesquisaFilme');
+            atualizarResultados();
         }
     });
     
-    function updateResults() {
-        totalResponsesSpan.textContent = responses.length;
+    function atualizarResultados() {
+        spanTotalRespostas.textContent = respostas.length;
         
-        if (responses.length === 0) {
-            resultsDiv.innerHTML = `
+        if (respostas.length === 0) {
+            divResultados.innerHTML = `
                 <div class="empty-state">
                     <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png" alt="Pesquisa vazia" width="100">
                     <p>Adicione respostas para ver os resultados</p>
@@ -116,86 +116,86 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             // Resetar gráficos
-            opinionChart.data.datasets[0].data = [0, 0, 0, 0];
-            genderChart.data.datasets[0].data = [0, 0, 0];
-            opinionChart.update();
-            genderChart.update();
+            graficoOpiniao.data.datasets[0].data = [0, 0, 0, 0];
+            graficoGenero.data.datasets[0].data = [0, 0, 0];
+            graficoOpiniao.update();
+            graficoGenero.update();
             
             return;
         }
         
         // Calcular estatísticas
-        const totalResponses = responses.length;
+        const totalRespostas = respostas.length;
         
         // Média de idade
-        const averageAge = responses.reduce((sum, response) => sum + response.age, 0) / totalResponses;
+        const mediaIdade = respostas.reduce((soma, resposta) => soma + resposta.idade, 0) / totalRespostas;
         
         // Idade mais velha e mais nova
-        const ages = responses.map(response => response.age);
-        const oldest = Math.max(...ages);
-        const youngest = Math.min(...ages);
+        const idades = respostas.map(resposta => resposta.idade);
+        const maisVelha = Math.max(...idades);
+        const maisNova = Math.min(...idades);
         
         // Quantidade de cada opinião
-        const opinionCount = {
-            otimo: responses.filter(response => response.opinion === 4).length,
-            bom: responses.filter(response => response.opinion === 3).length,
-            regular: responses.filter(response => response.opinion === 2).length,
-            pessimo: responses.filter(response => response.opinion === 1).length
+        const contagemOpinioes = {
+            otimo: respostas.filter(resposta => resposta.opiniao === 4).length,
+            bom: respostas.filter(resposta => resposta.opiniao === 3).length,
+            regular: respostas.filter(resposta => resposta.opiniao === 2).length,
+            pessimo: respostas.filter(resposta => resposta.opiniao === 1).length
         };
         
         // Porcentagem de ótimo e bom
-        const goodGreatCount = opinionCount.otimo + opinionCount.bom;
-        const goodGreatPercentage = (goodGreatCount / totalResponses) * 100;
+        const contagemOtimoBom = contagemOpinioes.otimo + contagemOpinioes.bom;
+        const porcentagemOtimoBom = (contagemOtimoBom / totalRespostas) * 100;
         
         // Contagem por gênero
-        const genderCount = {
-            masculino: responses.filter(response => response.gender === 'masculino').length,
-            feminino: responses.filter(response => response.gender === 'feminino').length,
-            outros: responses.filter(response => response.gender === 'outros').length
+        const contagemGenero = {
+            masculino: respostas.filter(resposta => resposta.genero === 'masculino').length,
+            feminino: respostas.filter(resposta => resposta.genero === 'feminino').length,
+            outros: respostas.filter(resposta => resposta.genero === 'outros').length
         };
         
         // Atualizar gráficos
-        opinionChart.data.datasets[0].data = [
-            opinionCount.otimo,
-            opinionCount.bom,
-            opinionCount.regular,
-            opinionCount.pessimo
+        graficoOpiniao.data.datasets[0].data = [
+            contagemOpinioes.otimo,
+            contagemOpinioes.bom,
+            contagemOpinioes.regular,
+            contagemOpinioes.pessimo
         ];
-        opinionChart.update();
+        graficoOpiniao.update();
         
-        genderChart.data.datasets[0].data = [
-            genderCount.masculino,
-            genderCount.feminino,
-            genderCount.outros
+        graficoGenero.data.datasets[0].data = [
+            contagemGenero.masculino,
+            contagemGenero.feminino,
+            contagemGenero.outros
         ];
-        genderChart.update();
+        graficoGenero.update();
         
         // Exibir resultados
-        resultsDiv.innerHTML = `
+        divResultados.innerHTML = `
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Média de Idade</h3>
-                    <p>${averageAge.toFixed(1)} anos</p>
+                    <p>${mediaIdade.toFixed(1)} anos</p>
                 </div>
                 <div class="stat-card">
                     <h3>Pessoa Mais Velha</h3>
-                    <p>${oldest} anos</p>
+                    <p>${maisVelha} anos</p>
                 </div>
                 <div class="stat-card">
                     <h3>Pessoa Mais Nova</h3>
-                    <p>${youngest} anos</p>
+                    <p>${maisNova} anos</p>
                 </div>
                 <div class="stat-card">
                     <h3>Avaliações Péssimas</h3>
-                    <p>${opinionCount.pessimo}</p>
+                    <p>${contagemOpinioes.pessimo}</p>
                 </div>
                 <div class="stat-card">
                     <h3>Ótimo/Bom</h3>
-                    <p>${goodGreatPercentage.toFixed(1)}%</p>
+                    <p>${porcentagemOtimoBom.toFixed(1)}%</p>
                 </div>
                 <div class="stat-card">
                     <h3>Total de Respostas</h3>
-                    <p>${totalResponses}</p>
+                    <p>${totalRespostas}</p>
                 </div>
             </div>
         `;
