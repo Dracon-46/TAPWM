@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação de Filme</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Pesquisa de Satisfação</h1>
+            <p>Ajude-nos a melhorar coletando opiniões sobre o filme</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="form-container card">
+                <h2>Adicionar Resposta</h2>
+                <form id="surveyForm">
+                    <div class="form-group">
+                        <label for="age">Idade:</label>
+                        <input type="number" id="age" min="1" max="120" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="masculino" required>
+                                <span class="radio-btn"></span>
+                                <span>Masculino</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="feminino">
+                                <span class="radio-btn"></span>
+                                <span>Feminino</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="outros">
+                                <span class="radio-btn"></span>
+                                <span>Outros</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="opinion">Opinião:</label>
+                        <div class="opinion-buttons">
+                            <label class="opinion-btn" data-value="4">
+                                <input type="radio" name="opinion" value="4" required>
+                                <span>Ótimo</span>
+                            </label>
+                            <label class="opinion-btn" data-value="3">
+                                <input type="radio" name="opinion" value="3">
+                                <span>Bom</span>
+                            </label>
+                            <label class="opinion-btn" data-value="2">
+                                <input type="radio" name="opinion" value="2">
+                                <span>Regular</span>
+                            </label>
+                            <label class="opinion-btn" data-value="1">
+                                <input type="radio" name="opinion" value="1">
+                                <span>Péssimo</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Adicionar Resposta</span>
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            
+            <div class="results-container card">
+                <h2>Resultados da Pesquisa</h2>
+                <div id="results">
+                    <div class="empty-state">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png" alt="Pesquisa vazia" width="100">
+                        <p>Adicione respostas para ver os resultados</p>
+                    </div>
+                </div>
+                
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h3>Distribuição de Opiniões</h3>
+                        <canvas id="opinionChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Distribuição por Gênero</h3>
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                </div>
+                
+                <button id="resetBtn" class="reset-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M12,4C14.1,4 16.1,4.8 17.6,6.3C20.7,9.4 20.7,14.5 17.6,17.6C15.8,19.5 13.3,20.2 10.9,19.9L11.4,17.9C13.1,18.1 14.9,17.5 16.2,16.2C18.5,13.9 18.5,10.1 16.2,7.7C15.1,6.6 13.5,6 12,6V10.6L7,5.6L12,0.6V4M6.3,17.6C3.7,15 3.3,11 5.1,7.9L6.6,9.4C5.5,11.6 5.9,14.4 7.8,16.2C8.3,16.7 8.9,17.1 9.6,17.4L9,19.4C8,19 7.1,18.4 6.3,17.6Z" />
+                    </svg>
+                    Reiniciar Pesquisa
+                </button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Total de respostas: <span id="totalResponses">0</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
