@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercício - Array</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Exercício - Arrays</h1>
+
+    <nav class="menu">
+      <button onclick="mostrarAba('ex1')">Exercício 1</button>
+      <button onclick="mostrarAba('ex2')">Exercício 2</button>
+    </nav>
+
+    <div id="ex1" class="aba ativa">
+      <h2>1. Operações com 3 números</h2>
+      <input type="number" id="numero1" placeholder="Primeiro número"/>
+      <input type="number" id="numero2" placeholder="Segundo número"/>
+      <input type="number" id="numero3" placeholder="Terceiro número"/>
+      <button onclick="exercicio1()">Executar</button>
+      <p id="resultado1"></p>
+    </div>
+
+    <div id="ex2" class="aba">
+      <h2>2. Gerar palavras com 5 letras</h2>
+      <input type="text" id="letrasInput" placeholder="Digite 5 letras (ex: abcde)"/>
+      <button onclick="exercicio2()">Gerar Palavras</button>
+      <p id="resultado2"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
