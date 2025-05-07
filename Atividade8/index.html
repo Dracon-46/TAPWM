@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Funções JS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" ></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividade 8 - Funções em JavaScript</h1>
+
+        <div class="nav-menu">
+            <button onclick="mostrarSecao('maior')" class="active">Maior Número</button>
+            <button onclick="mostrarSecao('ordem')">Ordenar Números</button>
+            <button onclick="mostrarSecao('palindromo')">Palíndromo</button>
+            <button onclick="mostrarSecao('media')">Média</button>
+        </div>
+
+        <section id="secao-maior">
+            <h2>1. Maior de três números</h2>
+            <div class="input-group">
+                <input type="number" id="n1-maior" placeholder="Número 1">
+                <input type="number" id="n2-maior" placeholder="Número 2">
+                <input type="number" id="n3-maior" placeholder="Número 3">
+            </div>
+            <button onclick="verificarMaior()">Verificar</button>
+            <button onclick="resetarMaior()" class="reset">Resetar</button>
+            <div class="result-container">
+                <p id="res-maior"></p>
+            </div>
+        </section>
+
+        <section id="secao-ordem" style="display: none;">
+            <h2>2. Números em ordem crescente</h2>
+            <div class="input-group">
+                <input type="number" id="n1-ordem" placeholder="Número 1">
+                <input type="number" id="n2-ordem" placeholder="Número 2">
+                <input type="number" id="n3-ordem" placeholder="Número 3">
+            </div>
+            <button onclick="ordenarNumeros()">Ordenar</button>
+            <button onclick="resetarOrdem()" class="reset">Resetar</button>
+            <div class="result-container">
+                <p id="res-ordem"></p>
+            </div>
+        </section>
+
+        <section id="secao-palindromo" style="display: none;">
+            <h2>3. Verificar se é palíndromo</h2>
+            <div class="input-group">
+                <input type="text" id="texto-palindromo" placeholder="Digite a frase">
+            </div>
+            <button onclick="verificarPalindromo()">Verificar</button>
+            <button onclick="resetarPalindromo()" class="reset">Resetar</button>
+            <div class="result-container">
+                <p id="res-palindromo"></p>
+            </div>
+        </section>
+
+        <section id="secao-media" style="display: none;">
+            <h2>4. Média de três números</h2>
+            <div class="input-group">
+                <input type="number" id="n1-media" placeholder="Número 1">
+                <input type="number" id="n2-media" placeholder="Número 2">
+                <input type="number" id="n3-media" placeholder="Número 3">
+            </div>
+            <button onclick="calcularMedia()">Calcular</button>
+            <button onclick="resetarMedia()" class="reset">Resetar</button>
+            <div class="result-container">
+                <p id="res-media"></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
