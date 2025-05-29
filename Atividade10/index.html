@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários</title>
+</head>
+<body>
+    <script>
+        // Função para formatar os dados do funcionário
+        function formatarFuncionario(func) {
+            return `Matrícula: ${func.matricula}\nNome: ${func.nome}\nFunção: ${func.funcao}`;
+        }
+
+        // Forma 1: objeto literal 
+        var funcionario1 = {
+            matricula: "12345",
+            nome: "João Silva",
+            funcao: "Desenvolvedor"
+        };
+        alert("Funcionário 1 (Literal):\n" + formatarFuncionario(funcionario1));
+
+        // Forma 2: Função construtora
+        function Funcionario(matricula, nome, funcao) {
+            this.matricula = matricula;
+            this.nome = nome;
+            this.funcao = funcao;
+        }
+        var funcionario2 = new Funcionario("67890", "Maria Souza", "Analista");
+        alert("Funcionário 2 (Construtor):\n" + formatarFuncionario(funcionario2));
+
+        // Forma 3: Classe ES6
+        class FuncionarioClass {
+            constructor(matricula, nome, funcao) {
+                this.matricula = matricula;
+                this.nome = nome;
+                this.funcao = funcao;
+            }
+        }
+        var funcionario3 = new FuncionarioClass("54321", "Carlos Oliveira", "Gerente");
+        alert("Funcionário 3 (Classe):\n" + formatarFuncionario(funcionario3));
+
+        // Usando Object.create()
+        var funcionarioProto = {
+            matricula: "",
+            nome: "",
+            funcao: "",
+            exibirDados: function() {
+                return `Matrícula: ${this.matricula}, Nome: ${this.nome}, Função: ${this.funcao}`;
+            }
+        };
+        var funcionario4 = Object.create(funcionarioProto);
+        funcionario4.matricula = "98765";
+        funcionario4.nome = "Ana Costa";
+        funcionario4.funcao = "Designer";
+        alert("Funcionário 4 (Object.create):\n" + formatarFuncionario(funcionario4));
+    </script>
+</body>
+</html>
