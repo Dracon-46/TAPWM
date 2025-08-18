@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Fatec Sorocaba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conheça nossos cursos</h1>
+        <p>Selecione um curso abaixo para ver mais detalhes.</p>
+        
+        <div class="select-wrapper">
+            <select id="cursoSelect" onchange="mostrarDetalhesCurso()">
+                <option value="">-- Escolha uma opção --</option>
+                <option value="Analise de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                <option value="Gestao Empresarial">Gestão Empresarial</option>
+                <option value="Logistica">Logística</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Projetos Mecanicos">Projetos Mecânicos</option>
+                <option value="Fabricacao Mecanica">Fabricação Mecânica</option>
+            </select>
+        </div>
+        
+        <footer>
+            <a href="https://www.fatecsorocaba.edu.br/" target="_blank">Site Oficial da Fatec Sorocaba</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
